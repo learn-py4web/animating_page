@@ -1,12 +1,28 @@
 var entree_el = $('input[name="entree"]');
 var dessert_el = $('input[name="dessert"]');
 var total_el = $('#total');
+var tip_amount = 0;
 
+// Buttons. 
+$('#tip-15').click(function() {
+    tip_amount = 0.15;
+    updateTotal();
+    });
+$('#tip-20').click(function() {
+    tip_amount = 0.20;
+    updateTotal();
+    });
+$('#tip-25').click(function() {
+    tip_amount = 0.25;
+    updateTotal();
+    });
+        
 function updateTotal() {
     var entree = parseFloat(entree_el.val());
     var dessert = parseFloat(dessert_el.val());
     var total = entree + dessert;
-    total_el.text(total);
+    total = total + (total * tip_amount);
+    total_el.text("$" + total.toFixed(2));
     }
 
 // These listen for change events. 
