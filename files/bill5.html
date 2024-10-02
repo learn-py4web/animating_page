@@ -32,9 +32,9 @@
           <tr>
             <td class="has-text-weight-bold">Tip</td>
             <td>
-              <button class="button is-success">15%</button>
-              <button class="button is-success ml-2>20%</button>
-              <button class="button is-success ml-2">25%</button>
+              <button class="button" :class="{ 'is-primary': tip == 0.15 }" @click="set_tip(0.15)">15%</button>
+              <button class="button ml-2" :class="{ 'is-primary': tip == 0.20 }" @click="set_tip(0.20)">20%</button>
+              <button class="button ml-2" :class="{ 'is-primary': tip == 0.25 }" @click="set_tip(0.25)">25%</button>
             </td>
           </tr>
           <tr>
@@ -46,7 +46,7 @@
     </section>
   </body>
   <!-- Put this at the end, otherwise it does not find the references to the elements. -->
-  <script src="js/bill4.js"></script>
+  <script src="js/bill5.js"></script>
 </html>
 
       
