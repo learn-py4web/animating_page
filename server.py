@@ -6,6 +6,10 @@ from bottle import get, run, static_file
 def serve_css(filename):
     return static_file(filename, root='css', mimetype='text/css')
 
+@get('/js/<filename:re:.*>')
+def serve_css(filename):
+    return static_file(filename, root='js', mimetype='text/javascript')
+
 @get('/<page:re:.*>')
 def index(page="index"):
     print("returning page: ", page)
