@@ -1,0 +1,11 @@
+h1.title {
+    color: red;
+}
+
+.subtitle {
+    color: blue;
+}
+
+.important {
+    font-weight: bold;
+}
