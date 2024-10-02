@@ -9,7 +9,8 @@ def serve_css(filename):
 @get('/<page:re:.*>')
 def index(page="index"):
     print("returning page: ", page)
-    return static_file(page + ".html", root="files", mimetype="text/html")
+    fn = page if page.endswith(".html") else page + ".html"
+    return static_file(fn, root="files", mimetype="text/html")
 
 
 run(reloader=True, host='localhost', port=8080)
