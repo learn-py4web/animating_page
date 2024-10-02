@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A sample page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="js/vue3.js"></script>
+  </head>
+  <body>
+    <section class="section" id="app">
+      <h1 class="title">Bill</h1>
+
+      <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Entree</td>
+            <td>
+              <input class="input" type="number" name="entree" @change="update" v-model="entree">
+            </td>
+          </tr>
+          <tr>
+            <td>Dessert</td>
+            <td>
+              <input class="input" type="number" name="dessert" @change="update" v-model="dessert">
+            </td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-bold">Tip</td>
+            <td>
+              <button class="button is-success" id="a">15%</button>
+              <button class="button is-success ml-2" id="b">20%</button>
+              <button class="button is-success ml-2">25%</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-bold">Total</td>
+            <td>{{"$" + total.toFixed(2)}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+  <!-- Put this at the end, otherwise it does not find the references to the elements. -->
+  <script src="js/bill4.js"></script>
+</html>
+
+      
