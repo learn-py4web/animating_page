@@ -10,6 +10,10 @@ def serve_css(filename):
 def serve_css(filename):
     return static_file(filename, root='js', mimetype='text/javascript')
 
+@get('/images/<filename:re:.*>')
+def serve_css(filename):
+    return static_file(filename, root='images', mimetype='image/jpeg')
+
 @get('/<page:re:.*>')
 def index(page="index"):
     print("returning page: ", page)
